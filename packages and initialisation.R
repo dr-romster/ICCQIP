@@ -20,6 +20,7 @@ if(length(missing_pkgs)>0) {
   install.packages(missing_pkgs, dependencies = FALSE)
 }
 
+install.packages("tidyverse")
 install.packages("ggrepel")
 install.packages("ggtext")
 install.packages("patchwork")
