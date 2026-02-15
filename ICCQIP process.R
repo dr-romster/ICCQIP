@@ -55,6 +55,11 @@ library(patchwork)
 
 #generic read /import function for ukhsa data file
 read_ukhsa <- function(xl, sht = "Table1"){
+  if (!file.exists(here("data", xl))){
+    stop(paste0("Report file not found: ", xl, "/n/n", 
+                "Please check file name and location in data subfolder"), call.=FALSE) 
+  }
+  
   
   if (sht %in% c("Table1", "Table 1", "Rate", "rate")){
     read_xlsx(here("data", xl), sheet = sht, 
