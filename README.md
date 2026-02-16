@@ -13,12 +13,14 @@ I would suggest that you create a new project in [Posit.cloud](https://posit.clo
 
 This is free for simple accounts that require mimimal resources
 
-Create a New Project, and select from the Dropdown list "From Github Repository"
+Create a New Project, and select from the Dropdown list "New from Git Repository"
 
+<p align = "center">
 ![git import](https://github.com/dr-romster/ICCQIP/blob/d4b7504c17bef087014bacae21ffec98a5ef831a/img/new_project.png)
-
+<\p>
+  
 Paste this link into that box: `https://github.com/dr-romster/ICCQIP.git`
 
-
+----
 
 The `workflow.R` script provides a straight forward walkthrough for producing trend plots of BSI data released in quarterly reports by UKHSA.
