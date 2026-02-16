@@ -15,9 +15,8 @@ This is free for simple accounts that require mimimal resources
 
 Create a New Project, and select from the Dropdown list "New from Git Repository"
 
-<p align = "center">
 ![git import](https://github.com/dr-romster/ICCQIP/blob/d4b7504c17bef087014bacae21ffec98a5ef831a/img/new_project.png)
-<\p>
+
   
 Paste this link into that box: `https://github.com/dr-romster/ICCQIP.git`
 
