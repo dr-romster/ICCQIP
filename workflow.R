@@ -13,16 +13,20 @@
 
 source('ICCQIP process.R')
 
-# add a folder to the project, called "data"
-system('mkdir data')
-# upload your UKHSA ICC QIP Excel file to the "data' folder
-# use the "Upload" button in the Files window
-
-# create images folder to store plot files
-system('mkdir img')
+# If you are not installing locally and not via Posit.cloud,
+# add a folder to the project, called "data".
+# system('mkdir data')
+# Create images folder to store plot files.
+#system('mkdir img')
 
 
-# define some basic parameters specific to your unit and file name:
+# All users (local or Posit.cloud):
+# Upload your UKHSA ICC QIP Excel file to the "data' folder.
+# Use the "Upload" button in the Files window.
+
+
+
+# Define some basic parameters specific to your unit and file name:
 
 #### please change these as appropriate BEFORE proceeding
 target_unit <- "NCCU"
