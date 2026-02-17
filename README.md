@@ -9,16 +9,30 @@ This project is released under the MIT License and is provided “as is”, with
 
 ## Getting started
 
-I would suggest that you create a new project in [Posit.cloud](https://posit.cloud/)
+> [!TIP]
+> Create a new project in [Posit.cloud](https://posit.cloud/)
 
-This is free for simple accounts that require mimimal resources
+This is free for simple accounts that require mimimal resources and avoids making chanages to your local R installation and its libraries. 
 
-Create a New Project, and select from the dropdown list <font color='pink'> New Project from Git Repository </font>
+**Create a New Project**
+
+Select from the dropdown list: **New Project from Git Repository**
 
 ![git import](https://github.com/dr-romster/ICCQIP/blob/d4b7504c17bef087014bacae21ffec98a5ef831a/img/new_project.png)
 
   
-Paste this link into that box: `https://github.com/dr-romster/ICCQIP.git`
+Paste this link into the url box: 
+
+`https://github.com/dr-romster/ICCQIP.git`
+
+
+## R Studio / Posit
+
+If using R Studio / Posit on your own computer. 
+
+Creat a New Project >> Version control >> Git 
+
+![rstudio import](https://github.com/dr-romster/ICCQIP/blob/bd3f6b0131f17527b779ade918a013e08ea40a11/img/rstudio_git.png)
 
 ----
 
