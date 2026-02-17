@@ -13,11 +13,13 @@
 
 source('ICCQIP process.R')
 
-# If you are not installing locally and not via Posit.cloud,
-# add a folder to the project, called "data".
+# If you are not installing directly from Github,
+# you will need to add a sub-folder to the project, called "data".
 # system('mkdir data')
+# The UKHSA Excel file should be copied here or else the script will not 
+# know where it is. 
 # Create images folder to store plot files.
-#system('mkdir img')
+# system('mkdir img')
 
 
 # All users (local or Posit.cloud):

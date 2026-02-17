@@ -34,6 +34,22 @@ Creat a New Project >> Version control >> Git
 
 ![rstudio import](https://github.com/dr-romster/ICCQIP/blob/bd3f6b0131f17527b779ade918a013e08ea40a11/img/rstudio_git.png)
 
+Repository URL:
+
+`https://github.com/dr-romster/ICCQIP.git`
+
+The other fields are to tell R Studio which local folder on your computer
+you want to use for the project. 
+
 ----
+
+
+> \[!IMPORTANT]
+> The Excel file from UKHSA needs to be copied / uploaded to the `/data` sub-directory
+> or else the script wull not know where to find it. 
+
+If using Posit Cloud, use the Upload button in the Filea window which is located in the lower right pane.
+
+---
 
 The `workflow.R` script provides a straight forward walkthrough for producing trend plots of BSI data released in quarterly reports by UKHSA.
