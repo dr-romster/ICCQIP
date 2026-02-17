@@ -107,3 +107,33 @@ plot_table_3_national <- organism_t3_plot(t3_combined, local = FALSE,
 plot_table_3_national
 
 
+# ---- Save plots
+
+ggsave("img/bsi_plot1.png", 
+       plot_1, 
+       width = 8, height = 6, dpi = 300, 
+       bg="white")
+
+
+ggsave("img/bsi_plot2.png", 
+       plot_2, 
+       width = 8, height = 6, dpi = 300, 
+       bg="white")
+
+
+ggsave("img/bsi_plot3.png", 
+       plot_3, 
+       width = 8, height = 6, dpi = 300, 
+       bg="white")
+
+
+ggsave("img/bsi_organism_plot1.png", 
+       plot_table_3_local, 
+       width = 8, height = 6, dpi = 300, 
+       bg="white")
+
+
+ggsave("img/bsi_organism_plot2.png", 
+       plot_table_3_national, 
+       width = 8, height = 6, dpi = 300, 
+       bg="white")

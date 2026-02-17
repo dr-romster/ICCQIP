@@ -12,7 +12,7 @@ This project is released under the MIT License and is provided “as is”, with
 > [!TIP]
 > Create a new project in [Posit.cloud](https://posit.cloud/)
 
-This is free for simple accounts that require mimimal resources and avoids making chanages to your local R installation and its libraries. 
+This is free for simple accounts that require minimal resources and avoids making changes to your local R installation and its libraries. 
 
 **Create a New Project**
 
@@ -48,7 +48,7 @@ you want to use for the project.
 > The Excel file from UKHSA needs to be copied / uploaded to the `/data` sub-directory
 > or else the script wull not know where to find it. 
 
-If using Posit Cloud, use the Upload button in the Filea window which is located in the lower right pane.
+If using Posit Cloud, use the Upload button in the Files window which is located in the lower right pane.
 
 ---
 
