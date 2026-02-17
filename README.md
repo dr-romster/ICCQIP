@@ -9,11 +9,13 @@ This project is released under the MIT License and is provided “as is”, with
 
 ## Getting started
 
-I would suggest that you create a new project in [Posit.cloud](https://posit.cloud/)
+> [!TIP]
+> I would suggest that you create a new project in [Posit.cloud](https://posit.cloud/)
 
 This is free for simple accounts that require mimimal resources
 
-Create a New Project, and select from the dropdown list <font color='pink'> New Project from Git Repository </font>
+**Create a New Project**
+Select from the dropdown list: <color color='pink'> New Project from Git Repository </color>
 
 ![git import](https://github.com/dr-romster/ICCQIP/blob/d4b7504c17bef087014bacae21ffec98a5ef831a/img/new_project.png)
 
