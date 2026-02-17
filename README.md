@@ -21,7 +21,7 @@ Select from the dropdown list: **New Project from Git Repository**
 ![git import](https://github.com/dr-romster/ICCQIP/blob/d4b7504c17bef087014bacae21ffec98a5ef831a/img/new_project.png)
 
   
-Paste this link into that box: 
+Paste this link into the url box: 
 
 `https://github.com/dr-romster/ICCQIP.git`
 
