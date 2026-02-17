@@ -32,7 +32,7 @@ If using R Studio / Posit on your own computer.
 
 Creat a New Project >> Version control >> From Git repository
 
-![rstudio import]((https://github.com/dr-romster/ICCQIP/blob/main/img/rstudio_git.png?raw=true))
+![rstudio import](https://github.com/dr-romster/ICCQIP/blob/main/img/rstudio_git.png)
 
 ----
 
