@@ -30,9 +30,9 @@ Paste this link into that box:
 
 If using R Studio / Posit on your own computer. 
 
-Creat a New Project >> Version control >> From Git repository
+Creat a New Project >> Version control >> Git 
 
-![rstudio import](https://github.com/dr-romster/ICCQIP/blob/main/img/rstudio_git.png)
+![rstudio import](https://github.com/dr-romster/ICCQIP/blob/bd3f6b0131f17527b779ade918a013e08ea40a11/img/rstudio_git.png)
 
 ----
 
