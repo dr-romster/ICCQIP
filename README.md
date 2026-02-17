@@ -10,17 +10,20 @@ This project is released under the MIT License and is provided “as is”, with
 ## Getting started
 
 > [!TIP]
-> I would suggest that you create a new project in [Posit.cloud](https://posit.cloud/)
+> Create a new project in [Posit.cloud](https://posit.cloud/)
 
-This is free for simple accounts that require mimimal resources
+This is free for simple accounts that require mimimal resources.
 
 **Create a New Project**
-Select from the dropdown list: <color color='pink'> New Project from Git Repository </color>
+
+Select from the dropdown list: **New Project from Git Repository**
 
 ![git import](https://github.com/dr-romster/ICCQIP/blob/d4b7504c17bef087014bacae21ffec98a5ef831a/img/new_project.png)
 
   
-Paste this link into that box: `https://github.com/dr-romster/ICCQIP.git`
+Paste this link into that box: 
+
+`https://github.com/dr-romster/ICCQIP.git`
 
 ----
 
