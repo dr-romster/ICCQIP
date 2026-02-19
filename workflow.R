@@ -38,8 +38,8 @@ source('ICCQIP process.R')
 
 #### please change these as appropriate BEFORE proceeding
 
-unit_name <- "NCCU"
-filename <- "RGT4-Report.xlsx"
+unit_name <- "Your unit"
+filename <- "XXXX-Report.xlsx"
 
 ## These changes should remain within the quotation marks " "
 
