@@ -4,7 +4,8 @@
 # the setup method is to use renv 
 # following:
 install.packages("renv")
-renv::restore()
+renv::activate()
+renv::restore(prompt = FALSE)
 
 # check ggbump installation 
 # the renv lock file may not be able to find ggbump so this will address that 

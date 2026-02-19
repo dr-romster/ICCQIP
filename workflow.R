@@ -1,6 +1,6 @@
 ## ICC QIP Bump plot workflow
 
-# This worklfow presumes that you are using a POSIT.Cloud
+# This workflow presumes that you are using a POSIT.Cloud
 # instance of R-Studio
 
 # To import all the scripts from the Github repository:
@@ -8,6 +8,12 @@
 # New project >> New project from Git repository
 # URL of git repository = https://github.com/dr-romster/ICCQIP.git
  
+# Do this first to install all the correct package versions
+# This step takes about 5 minutes. 
+install.packages("renv")
+renv::activate()
+renv::restore(prompt = FALSE)
+
 
 # load all the functions from the process script
 
@@ -31,22 +37,30 @@ source('ICCQIP process.R')
 # Define some basic parameters specific to your unit and file name:
 
 #### please change these as appropriate BEFORE proceeding
-target_unit <- "NCCU"
+
+unit_name <- "NCCU"
 filename <- "RGT4-Report.xlsx"
-####
+
+## These changes should remain within the quotation marks " "
+
 
 # specify colour of your unit's line in the bump plots
+
 unit_colour = "darkorange"
 
-# read and import data from UKHSA report
+# if you don't know how to change this, leave it alone!
+
+
+
+# 1. read and import data from UKHSA report
 ukhsa_table_1 <- read_ukhsa(filename, sht = "Table1")
 
-# organise data at local and national level into a single data frame
+# 2. organise data at local and national level into a single data frame
 
 local_national_combined_table_1 <- combined_tab(
   t1_extract_unit_data(tab1_obj = ukhsa_table_1, 
                        local = TRUE, 
-                       unit_name = target_unit), # organise local data
+                       unit_name = unit_name), # organise local data
   t1_extract_unit_data(tab1_obj = ukhsa_table_1, 
                        local = FALSE), # organise national data
   table = "Table1"
@@ -55,7 +69,7 @@ local_national_combined_table_1 <- combined_tab(
 # this object allows for plotting of local and national data from 
 # table 1
 
-# Bump plot of BSI rates per patient days, local vs national
+# 3. Bump plot of BSI rates per patient days, local vs national
 plot_1 <- 
   icqqip_plot(combined_df = 
                 local_national_combined_table_1, 
@@ -65,7 +79,7 @@ plot_1 <-
 
 plot_1
 
-# Bump plot of BSI rates per 1000 blood cultures taken. 
+# Bump plot of BSI rates per 1000 patients days.
 
 plot_2 <- icqqip_plot(local_national_combined_table_1, column = 2) +
   labs(
@@ -74,7 +88,7 @@ plot_2 <- icqqip_plot(local_national_combined_table_1, column = 2) +
 plot_2
 
 
-# Bump plot of BSI rates per 
+# Bump plot of BSI rates 1000 blood cultures taken. 
 
 plot_3 <- icqqip_plot(local_national_combined_table_1, column = 3) +
   labs(
@@ -84,14 +98,14 @@ plot_3
 
 -----
 
-# Organism trend plot using data from Report Sheet / Table 3
+# 4. Organism trend plot using data from Report Sheet / Table 3
 
 ukhsa_table_3 <- read_ukhsa(filename, sht = "Table3")
 
 t3_combined <- combined_tab(
   t3_extract_unit_data(tab3_obj = ukhsa_table_3, 
                        local = TRUE, 
-                       unit_name = target_unit), # local
+                       unit_name = unit_name), # local
   t3_extract_unit_data(tab3_obj = ukhsa_table_3, 
                        local = FALSE), #national data
   table = "Table3", 
@@ -99,23 +113,25 @@ t3_combined <- combined_tab(
   )
 
 
-# organisms abundance trend plot
+# 5. organisms abundance trend plot - local 
 
-plot_table_3_local <- organism_t3_plot(t3_combined, local = TRUE, 
-                                       unit_name = target_unit, 
+plot_table_3_local <- organism_t3_plot(t3_combined, 
+                                       local = TRUE, 
+                                       unit_name = unit_name, 
                                        quartiles = 7 #number of quarter to plot, default = 7
                                        )
 plot_table_3_local
 
-# organisms abundance trend plot
+# organisms abundance trend plot - national
 
-plot_table_3_national <- organism_t3_plot(t3_combined, local = FALSE, 
+plot_table_3_national <- organism_t3_plot(t3_combined, 
+                                          local = FALSE, 
                                        quartiles = 7) #number of quarter to plot, default = 7
 
 plot_table_3_national
 
 
-# ---- Save plots
+# ---- 6. Save plots
 
 ggsave("img/bsi_plot1.png", 
        plot_1, 
