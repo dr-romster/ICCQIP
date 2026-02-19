@@ -19,9 +19,11 @@ renv::restore(prompt = FALSE)
 
 source('ICCQIP process.R')
 
-# If you are not installing directly from Github,
+
 # you will need to add a sub-folder to the project, called "data".
-# system('mkdir data')
+system('mkdir data')
+
+ 
 # The UKHSA Excel file should be copied here or else the script will not 
 # know where it is. 
 # Create images folder to store plot files.
