@@ -57,16 +57,16 @@ If using Posit Cloud, use the Upload button in the Files window which is located
 
 This R Project contains 3 scripts
 
-[1] workflow.R
+1. workflow.R
 
 - This gives a step-by-step approach to creating the plots from the UKHSA spreadsheet. 
 - Start here if you are a beginner / novice. 
 
-[2] ICCQIP process.R
+2. ICCQIP process.R
 
 - This contains the core functions that import, process and plot the data. 
 
-[3] Packages and initialisation.R
+3. Packages and initialisation.R
 
 - If you wish to install the libraries manually this contains details on how to do this. 
 
