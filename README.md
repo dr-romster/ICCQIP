@@ -50,6 +50,27 @@ you want to use for the project.
 
 If using Posit Cloud, use the Upload button in the Files window which is located in the lower right pane.
 
----
+----
 
-The `workflow.R` script provides a straight forward walkthrough for producing trend plots of BSI data released in quarterly reports by UKHSA.
+## Contents
+
+
+This R Project contains 3 scripts
+
+[1] workflow.R
+
+- This gives a step-by-step approach to creating the plots from the UKHSA spreadsheet. 
+- Start here if you are a beginner / novice. 
+
+[2] ICCQIP process.R
+
+- This contains the core functions that import, process and plot the data. 
+
+[3] Packages and initialisation.R
+
+- If you wish to install the libraries manually this contains details on how to do this. 
+
+- Not essential, only for people who want to look "under the bonnet" and tinker for themselves.
+
+-----
+

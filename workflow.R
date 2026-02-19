@@ -44,8 +44,11 @@ ukhsa_table_1 <- read_ukhsa(filename, sht = "Table1")
 # organise data at local and national level into a single data frame
 
 local_national_combined_table_1 <- combined_tab(
-  t1_extract_unit_data(ukhsa_table_1, TRUE, target, unit), # organise local data
-  t1_extract_unit_data(ukhsa_table_1, FALSE), # organise national data
+  t1_extract_unit_data(tab1_obj = ukhsa_table_1, 
+                       local = TRUE, 
+                       unit_name = target_unit), # organise local data
+  t1_extract_unit_data(tab1_obj = ukhsa_table_1, 
+                       local = FALSE), # organise national data
   table = "Table1"
   )
 
@@ -54,7 +57,9 @@ local_national_combined_table_1 <- combined_tab(
 
 # Bump plot of BSI rates per patient days, local vs national
 plot_1 <- 
-  icqqip_plot(local_national_combined_table_1, column = 1) +
+  icqqip_plot(combined_df = 
+                local_national_combined_table_1, 
+              column = 1) +
   labs(
     caption = glue::glue('Fig 1. Rates of BSI on {target_unit} compared with the national averages'))
 
@@ -84,8 +89,11 @@ plot_3
 ukhsa_table_3 <- read_ukhsa(filename, sht = "Table3")
 
 t3_combined <- combined_tab(
-  t3_extract_unit_data(ukhsa_table_3, local = TRUE, unit_name = target_unit), # local
-  t3_extract_unit_data(ukhsa_table_3, local = FALSE), #national data
+  t3_extract_unit_data(tab3_obj = ukhsa_table_3, 
+                       local = TRUE, 
+                       unit_name = target_unit), # local
+  t3_extract_unit_data(tab3_obj = ukhsa_table_3, 
+                       local = FALSE), #national data
   table = "Table3", 
   top_X = 6 # extracts top 6 organisms, can be adjusted
   )
