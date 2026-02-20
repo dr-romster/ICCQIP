@@ -169,35 +169,36 @@ combined_tab <- function(df1, df2,   # local and national dfs.
     mutate(Period = as.factor(Period) ) |> 
     mutate(time = row_number()) |> 
     mutate(Period2 = as.numeric(Period)) |> 
-    left_join(period_lookup %>% dplyr::select(-q_date), by = 'Period')
-  # mutate(Tidy_period = case_when(
-  #   
-  #   Period == "Q28" ~ "Apr\n2023", 
-  #   Period == "Q29" ~ "Jul\n2023", 
-  #   Period == "Q30" ~ "Oct\n2023", 
-  #   Period == "Q31" ~ "Jan\n2024", 
-  #   Period == "Q32" ~ "Apr\n2024", 
-  #   Period == "Q33" ~ "Jul\n2024", 
-  #   Period == "Q34" ~ "Oct\n2024",
-  #   Period == "Q35" ~ "Jan\n2025",
-  #   Period == "Q36" ~ "Apr\n2025", 
-  #   Period == "Q37" ~ "Jul\n2025", 
-  #   Period == "Q38" ~ "Oct\n2025", 
-  #   Period == "Q39" ~ "Jan\n2026",
-  #   Period == "Q40" ~ "Apr\n2026",
-  #   Period == "Q41" ~ "Jul\n2026",
-  #   Period == "Q42" ~ "Oct\n2026",
-  #   Period == "Q43" ~ "Jan\n2027",
-  #   Period == "Q44" ~ "Apr\n2027",
-  #   Period == "Q45" ~ "Jul\n2027",
-  #   Period == "Q46" ~ "Oct\n2027",
-  #   Period == "Q47" ~ "Jan\n2028",
-  #   Period == "Q48" ~ "Apr\n2028",
-  #   Period == "Q49" ~ "Jul\n2028",
-  #   Period == "Q50" ~ "Oct\n2028",
-  #   # can be extended, might be able to do this programmatically
-  
-  # TRUE ~ Period
+    left_join(period_lookup %>% dplyr::select(-q_date), by = 'Period') |> 
+    mutate(Period = as.factor(Period) ) # have to respecify factor after join
+#    mutate(Tidy_period = case_when(
+#   
+#      Period == "Q28" ~ "Apr\n2023",
+#      Period == "Q29" ~ "Jul\n2023",
+#      Period == "Q30" ~ "Oct\n2023",
+#      Period == "Q31" ~ "Jan\n2024",
+#      Period == "Q32" ~ "Apr\n2024",
+#      Period == "Q33" ~ "Jul\n2024",
+#      Period == "Q34" ~ "Oct\n2024",
+#      Period == "Q35" ~ "Jan\n2025",
+#      Period == "Q36" ~ "Apr\n2025",
+#      Period == "Q37" ~ "Jul\n2025",
+#      Period == "Q38" ~ "Oct\n2025",
+#      Period == "Q39" ~ "Jan\n2026",
+#      Period == "Q40" ~ "Apr\n2026",
+#      Period == "Q41" ~ "Jul\n2026",
+#      Period == "Q42" ~ "Oct\n2026",
+#      Period == "Q43" ~ "Jan\n2027",
+#      Period == "Q44" ~ "Apr\n2027",
+#      Period == "Q45" ~ "Jul\n2027",
+#      Period == "Q46" ~ "Oct\n2027",
+#      Period == "Q47" ~ "Jan\n2028",
+#      Period == "Q48" ~ "Apr\n2028",
+#      Period == "Q49" ~ "Jul\n2028",
+#      Period == "Q50" ~ "Oct\n2028",
+# #  # can be extended, might be able to do this programmatically
+# 
+#    TRUE ~ Period
   #))
   if(table == "Table1"){
     
@@ -274,34 +275,37 @@ t3_long_function <- function(t3_df,
                            "Coag-neg Staph", metric)) |> 
     mutate(metric = as.factor(metric)) |> 
     mutate(selected = ifelse(metric %in% top_Bugs$Pathogen, 1, 0)) |> 
+    mutate(Period = as.factor(Period)) |> 
     mutate(Period2 = as.numeric(Period)) |> 
-    mutate(Tidy_period = case_when(
-      
-      Period == "Q28" ~ "Apr\n2023", 
-      Period == "Q29" ~ "Jul\n2023", 
-      Period == "Q30" ~ "Oct\n2023", 
-      Period == "Q31" ~ "Jan\n2024", 
-      Period == "Q32" ~ "Apr\n2024", 
-      Period == "Q33" ~ "Jul\n2024", 
-      Period == "Q34" ~ "Oct\n2024",
-      Period == "Q35" ~ "Jan\n2025",
-      Period == "Q36" ~ "Apr\n2025", 
-      Period == "Q37" ~ "Jul\n2025", 
-      Period == "Q38" ~ "Oct\n2025", 
-      Period == "Q39" ~ "Jan\n2026",
-      Period == "Q40" ~ "Apr\n2026",
-      Period == "Q41" ~ "Jul\n2026",
-      Period == "Q42" ~ "Oct\n2026",
-      Period == "Q43" ~ "Jan\n2027",
-      Period == "Q44" ~ "Apr\n2027",
-      Period == "Q45" ~ "Jul\n2027",
-      Period == "Q46" ~ "Oct\n2027",
-      Period == "Q47" ~ "Jan\n2028",
-      Period == "Q48" ~ "Apr\n2028",
-      Period == "Q49" ~ "Jul\n2028",
-      Period == "Q50" ~ "Oct\n2028",
-      
-      TRUE ~ Period)) 
+    left_join(period_lookup %>% dplyr::select(-q_date), by = 'Period') |>
+    mutate(Period = as.factor(Period)) # re-specify factor after chr join
+    # mutate(Tidy_period = case_when(
+    # 
+    #   Period == "Q28" ~ "Apr\n2023",
+    #   Period == "Q29" ~ "Jul\n2023",
+    #   Period == "Q30" ~ "Oct\n2023",
+    #   Period == "Q31" ~ "Jan\n2024",
+    #   Period == "Q32" ~ "Apr\n2024",
+    #   Period == "Q33" ~ "Jul\n2024",
+    #   Period == "Q34" ~ "Oct\n2024",
+    #   Period == "Q35" ~ "Jan\n2025",
+    #   Period == "Q36" ~ "Apr\n2025",
+    #   Period == "Q37" ~ "Jul\n2025",
+    #   Period == "Q38" ~ "Oct\n2025",
+    #   Period == "Q39" ~ "Jan\n2026",
+    #   Period == "Q40" ~ "Apr\n2026",
+    #   Period == "Q41" ~ "Jul\n2026",
+    #   Period == "Q42" ~ "Oct\n2026",
+    #   Period == "Q43" ~ "Jan\n2027",
+    #   Period == "Q44" ~ "Apr\n2027",
+    #   Period == "Q45" ~ "Jul\n2027",
+    #   Period == "Q46" ~ "Oct\n2027",
+    #   Period == "Q47" ~ "Jan\n2028",
+    #   Period == "Q48" ~ "Apr\n2028",
+    #   Period == "Q49" ~ "Jul\n2028",
+    #   Period == "Q50" ~ "Oct\n2028",
+    # 
+    #   TRUE ~ Period))
 }
 
 # augmentiing functions for previous sheets

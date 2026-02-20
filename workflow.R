@@ -77,7 +77,7 @@ plot_1 <-
                 local_national_combined_table_1, 
               column = 1) +
   labs(
-    caption = glue::glue('Fig 1. Rates of BSI on {target_unit} compared with the national averages'))
+    caption = glue::glue('Fig 1. Rates of BSI on {unit_name} compared with the national averages'))
 
 plot_1
 
@@ -85,7 +85,7 @@ plot_1
 
 plot_2 <- icqqip_plot(local_national_combined_table_1, column = 2) +
   labs(
-    caption= glue::glue('Fig 2. Rates of positive blood cultures on {target_unit} compared with the national averages'))
+    caption= glue::glue('Fig 2. Rates of positive blood cultures on {unit_name} compared with the national averages'))
 
 plot_2
 
@@ -94,11 +94,11 @@ plot_2
 
 plot_3 <- icqqip_plot(local_national_combined_table_1, column = 3) +
   labs(
-    caption= glue::glue('Fig 3. Rates of positive blood cultures adjusted for sampling rates on {target_unit} compared with the national averages'))
+    caption= glue::glue('Fig 3. Rates of positive blood cultures adjusted for sampling rates on {unit_name} compared with the national averages'))
 
 plot_3
 
------
+# -----
 
 # 4. Organism trend plot using data from Report Sheet / Table 3
 
