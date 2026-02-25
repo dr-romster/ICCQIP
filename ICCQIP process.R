@@ -46,10 +46,10 @@ library(patchwork)
 # 8. t3_augment - binds Table 3 data from previous quarterly reports to latest one. 
 # 9. icqqip_plot - bump plot. For either Table 1 or Table 3 data
 # 10. organism_t3_plot - bump plot for organims-level data. 
-# 11. add_df_xrm_ - creates data frames to add control limts for plots from Table 1 data
+# 11. add_df_xmr_ - creates data frames to add control limts for plots from Table 1 data
 # 12. quick_plot_ukhsa - quick and dirty look at bump plots. 
 #     Produces 3 plots from Table 1 and 2 plots from Table 3. 
-#     Non-augmented, no XrM, default organisms. 
+#     Non-augmented, no xMr, default organisms. 
 
 
 
@@ -385,7 +385,7 @@ icqqip_plot <- function(combined_df, # local and national merged tidy data
                         column = 1, 
                         colour1 = "darkorchid", # national unit colour 
                         colour2 = "darkorange", # local data colour
-                        xrm = FALSE             # add XrM lines
+                        xmr = FALSE             # add xMr lines
 ){
   
   # column options
@@ -449,8 +449,8 @@ icqqip_plot <- function(combined_df, # local and national merged tidy data
       scale_y_continuous(name = "")
   }
   
-  if (xrm == TRUE){
-    cl_df <- add_xrm_df(combined_df)
+  if (xmr == TRUE){
+    cl_df <- add_xmr_df(combined_df)
     
     cl_df_col <- cl_df[[as.numeric(column)]]
     bump_plot <- bump_plot +
@@ -555,7 +555,7 @@ organism_t3_plot <- function(t3_object,
 
 
 
-add_xrm_df <- function(combined_t1_obj){
+add_xmr_df <- function(combined_t1_obj){
   
   # three columns to target
   column_list <- c("Rate of BSI per 1,000 patient days", 
@@ -619,9 +619,9 @@ quick_plot_ukhsa <- function(xl, name = "Your Unit"){
   
   bsi_plots <- list()
   
-  bsi_plots[[1]] <- icqqip_plot(local_national_t1, column = 1, xrm = FALSE )
-  bsi_plots[[2]] <- icqqip_plot(local_national_t1, column = 2, xrm = FALSE )
-  bsi_plots[[3]] <- icqqip_plot(local_national_t1, column = 3, xrm = FALSE )
+  bsi_plots[[1]] <- icqqip_plot(local_national_t1, column = 1, xmr = FALSE )
+  bsi_plots[[2]] <- icqqip_plot(local_national_t1, column = 2, xmr = FALSE )
+  bsi_plots[[3]] <- icqqip_plot(local_national_t1, column = 3, xmr = FALSE )
   
   
   bsi_obj_names <- c("BSI_plot_1", "BSI_plot_2", "BSI_plot_3")
